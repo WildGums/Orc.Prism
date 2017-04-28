@@ -8,7 +8,7 @@
     <owners>WildGums</owners>
 
 	<description>
-	  Orc.Prism5 description.
+	  Orc.Prism5 library which contains helper classes for prism. This is the replacement for Catel.Extensions.Prism5.
 	</description>
 	<summary>
 	</summary>
@@ -25,6 +25,13 @@
     
     <dependencies>
       <dependency id="Catel.Core" version="[replaced]" />
+      <dependency id="Catel.MVVM" version="[replaced]" />
+      <dependency id="Prism" version="[replaced]" />
+      <dependency id="Prism.Composition" version="[replaced]" />
+      <dependency id="Prism.Interactivity" version="[replaced]" />
+      <dependency id="Prism.Mvvm" version="[replaced]" />
+      <dependency id="Prism.PubSubEvents" version="[replaced]" />
+      <dependency id="NuGet.Core" version="[replaced]" />
     </dependencies>
   </metadata>
 </package>

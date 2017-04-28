@@ -1,6 +1,14 @@
 using Catel.IoC;
 using Catel.Services;
 using Catel.Services.Models;
+using Orc.Prism.Services;
+using Orc.Prism.Tasks;
+
+#if PRISM6
+using Prism.Regions;
+#else
+using Microsoft.Practices.Prism.Regions;
+#endif
 
 /// <summary>
 /// Used by the ModuleInit. All code inside the Initialize method is ran as soon as the assembly is loaded.
@@ -14,7 +22,10 @@ public static class ModuleInitializer
     {
         var serviceLocator = ServiceLocator.Default;
 
-		// TODO: register services here
+        serviceLocator.RegisterTypeIfNotYetRegistered<IBootstrapperTaskFactory, BootstrapperTaskFactory>();
+
+        serviceLocator.RegisterType<RegionAdapterMappings, RegionAdapterMappings>();
+        serviceLocator.RegisterType<IUICompositionService, UICompositionService>();
 
         var languageService = serviceLocator.ResolveType<ILanguageService>();
         languageService.RegisterLanguageSource(new LanguageResourceSource("Orc.Prism5", "Orc.Prism5.Properties", "Resources"));
