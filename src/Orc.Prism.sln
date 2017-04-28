@@ -79,31 +79,58 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orc.Prism6.Tests.NET46", "O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orc.Prism6.Tests.NET47", "Orc.Prism6.Tests\Orc.Prism6.Tests.NET47\Orc.Prism6.Tests.NET47.csproj", "{217DCC47-EFC9-4DD8-B147-7DE9DB9163FB}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Orc.Prism.Shared", "Orc.Prism.Shared\Orc.Prism.Shared.shproj", "{E25D0A5B-8406-4141-BE45-5D85B4702958}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Orc.Prism.Example.Shared", "Orc.Prism.Example.Shared\Orc.Prism.Example.Shared.shproj", "{DCDEF962-55D3-469C-A296-F67C1C3859A8}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Orc.Prism.Tests.Shared", "Orc.Prism.Tests.Shared\Orc.Prism.Tests.Shared.shproj", "{B8502CC4-0B11-4CDC-BC1B-8138DE93ED95}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Orc.Prism.Example.Shared\Orc.Prism.Example.Shared.projitems*{0a468e87-9b6e-4f7e-a495-a78debbd7346}*SharedItemsImports = 4
 		Orc.Prism6.Example\Orc.Prism6.Example.Shared\Orc.Prism6.Example.Shared.projitems*{0a468e87-9b6e-4f7e-a495-a78debbd7346}*SharedItemsImports = 4
+		Orc.Prism.Tests.Shared\Orc.Prism.Tests.Shared.projitems*{217dcc47-efc9-4dd8-b147-7de9db9163fb}*SharedItemsImports = 4
 		Orc.Prism6.Tests\Orc.Prism6.Tests.Shared\Orc.Prism6.Tests.Shared.projitems*{217dcc47-efc9-4dd8-b147-7de9db9163fb}*SharedItemsImports = 4
+		Orc.Prism.Tests.Shared\Orc.Prism.Tests.Shared.projitems*{29db9e76-db07-43dd-8d99-ffdc9d507a91}*SharedItemsImports = 4
 		Orc.Prism6.Tests\Orc.Prism6.Tests.Shared\Orc.Prism6.Tests.Shared.projitems*{29db9e76-db07-43dd-8d99-ffdc9d507a91}*SharedItemsImports = 4
+		Orc.Prism.Example.Shared\Orc.Prism.Example.Shared.projitems*{33f3be55-3ec9-4223-8743-071dacbf9e25}*SharedItemsImports = 4
 		Orc.Prism5.Example\Orc.Prism5.Example.Shared\Orc.Prism5.Example.Shared.projitems*{33f3be55-3ec9-4223-8743-071dacbf9e25}*SharedItemsImports = 4
 		Orc.Prism6.Example\Orc.Prism6.Example.Shared\Orc.Prism6.Example.Shared.projitems*{340c94a4-77dc-4bd8-8c0e-5d15d355f07e}*SharedItemsImports = 13
+		Orc.Prism.Shared\Orc.Prism.Shared.projitems*{36cd7993-756d-4600-bea4-2629eb2fc665}*SharedItemsImports = 4
 		Orc.Prism6\Orc.Prism6.Shared\Orc.Prism6.Shared.projitems*{36cd7993-756d-4600-bea4-2629eb2fc665}*SharedItemsImports = 4
+		Orc.Prism.Shared\Orc.Prism.Shared.projitems*{3c1e9cea-26e2-4f0e-a16f-23cf190da646}*SharedItemsImports = 4
 		Orc.Prism5\Orc.Prism5.Shared\Orc.Prism5.Shared.projitems*{3c1e9cea-26e2-4f0e-a16f-23cf190da646}*SharedItemsImports = 4
 		Orc.Prism6\Orc.Prism6.Shared\Orc.Prism6.Shared.projitems*{4354c80b-8954-47db-be6d-705f4e8a58da}*SharedItemsImports = 13
+		Orc.Prism.Example.Shared\Orc.Prism.Example.Shared.projitems*{50703442-2b06-4da5-a813-192cd4b8c802}*SharedItemsImports = 4
 		Orc.Prism6.Example\Orc.Prism6.Example.Shared\Orc.Prism6.Example.Shared.projitems*{50703442-2b06-4da5-a813-192cd4b8c802}*SharedItemsImports = 4
+		Orc.Prism.Shared\Orc.Prism.Shared.projitems*{5e550cc2-1282-4ae7-a152-a1dadf37d5a5}*SharedItemsImports = 4
 		Orc.Prism5\Orc.Prism5.Shared\Orc.Prism5.Shared.projitems*{5e550cc2-1282-4ae7-a152-a1dadf37d5a5}*SharedItemsImports = 4
 		Orc.Prism5\Orc.Prism5.Shared\Orc.Prism5.Shared.projitems*{61751fd7-6b39-417a-874e-3f7163a6d375}*SharedItemsImports = 13
 		Orc.Prism5.Example\Orc.Prism5.Example.Shared\Orc.Prism5.Example.Shared.projitems*{65cc8ae2-8233-4b78-9c1a-9d144eef1777}*SharedItemsImports = 13
+		Orc.Prism.Tests.Shared\Orc.Prism.Tests.Shared.projitems*{68164833-8923-4d08-9429-0949bed464bc}*SharedItemsImports = 4
 		Orc.Prism5.Tests\Orc.Prism5.Tests.Shared\Orc.Prism5.Tests.Shared.projitems*{68164833-8923-4d08-9429-0949bed464bc}*SharedItemsImports = 4
+		Orc.Prism.Shared\Orc.Prism.Shared.projitems*{6fef1ba7-11a9-4bc6-a96e-72a9f00caae8}*SharedItemsImports = 4
 		Orc.Prism6\Orc.Prism6.Shared\Orc.Prism6.Shared.projitems*{6fef1ba7-11a9-4bc6-a96e-72a9f00caae8}*SharedItemsImports = 4
+		Orc.Prism.Tests.Shared\Orc.Prism.Tests.Shared.projitems*{711776c9-d2d5-4d09-8eca-c23b1668a6fd}*SharedItemsImports = 4
 		Orc.Prism5.Tests\Orc.Prism5.Tests.Shared\Orc.Prism5.Tests.Shared.projitems*{711776c9-d2d5-4d09-8eca-c23b1668a6fd}*SharedItemsImports = 4
 		Orc.Prism6.Tests\Orc.Prism6.Tests.Shared\Orc.Prism6.Tests.Shared.projitems*{719449ab-76df-4f0f-9e3b-35e66d5d9293}*SharedItemsImports = 13
+		Orc.Prism.Example.Shared\Orc.Prism.Example.Shared.projitems*{7411e83d-2169-4b3d-a177-03d388c6b81f}*SharedItemsImports = 4
 		Orc.Prism5.Example\Orc.Prism5.Example.Shared\Orc.Prism5.Example.Shared.projitems*{7411e83d-2169-4b3d-a177-03d388c6b81f}*SharedItemsImports = 4
+		Orc.Prism.Shared\Orc.Prism.Shared.projitems*{74c17a20-cad5-4a50-a94c-eff0d24f38c6}*SharedItemsImports = 4
 		Orc.Prism5\Orc.Prism5.Shared\Orc.Prism5.Shared.projitems*{74c17a20-cad5-4a50-a94c-eff0d24f38c6}*SharedItemsImports = 4
+		Orc.Prism.Shared\Orc.Prism.Shared.projitems*{7949f31f-927e-4f72-8dda-f59ec0bc6afb}*SharedItemsImports = 4
 		Orc.Prism6\Orc.Prism6.Shared\Orc.Prism6.Shared.projitems*{7949f31f-927e-4f72-8dda-f59ec0bc6afb}*SharedItemsImports = 4
 		Orc.Prism5.Tests\Orc.Prism5.Tests.Shared\Orc.Prism5.Tests.Shared.projitems*{7cb94b3d-ff22-4c7e-a66d-41cbc3dc76a5}*SharedItemsImports = 13
+		Orc.Prism.Tests.Shared\Orc.Prism.Tests.Shared.projitems*{a61bc07c-6f73-4d27-8c94-20b8228b4374}*SharedItemsImports = 4
 		Orc.Prism6.Tests\Orc.Prism6.Tests.Shared\Orc.Prism6.Tests.Shared.projitems*{a61bc07c-6f73-4d27-8c94-20b8228b4374}*SharedItemsImports = 4
+		Orc.Prism.Tests.Shared\Orc.Prism.Tests.Shared.projitems*{b31bafe5-2715-408e-b91b-10e77a750bd1}*SharedItemsImports = 4
 		Orc.Prism5.Tests\Orc.Prism5.Tests.Shared\Orc.Prism5.Tests.Shared.projitems*{b31bafe5-2715-408e-b91b-10e77a750bd1}*SharedItemsImports = 4
+		Orc.Prism.Tests.Shared\Orc.Prism.Tests.Shared.projitems*{b8502cc4-0b11-4cdc-bc1b-8138de93ed95}*SharedItemsImports = 13
+		Orc.Prism.Example.Shared\Orc.Prism.Example.Shared.projitems*{dcdef962-55d3-469c-a296-f67c1c3859a8}*SharedItemsImports = 13
+		Orc.Prism.Example.Shared\Orc.Prism.Example.Shared.projitems*{e0957eb7-a4c6-4a64-973f-8477ff7a4b2c}*SharedItemsImports = 4
 		Orc.Prism6.Example\Orc.Prism6.Example.Shared\Orc.Prism6.Example.Shared.projitems*{e0957eb7-a4c6-4a64-973f-8477ff7a4b2c}*SharedItemsImports = 4
+		Orc.Prism.Shared\Orc.Prism.Shared.projitems*{e25d0a5b-8406-4141-be45-5d85b4702958}*SharedItemsImports = 13
+		Orc.Prism.Example.Shared\Orc.Prism.Example.Shared.projitems*{eb7ba13b-a81c-4ada-b405-2dc3945c4a53}*SharedItemsImports = 4
 		Orc.Prism5.Example\Orc.Prism5.Example.Shared\Orc.Prism5.Example.Shared.projitems*{eb7ba13b-a81c-4ada-b405-2dc3945c4a53}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -221,5 +248,8 @@ Global
 		{A61BC07C-6F73-4D27-8C94-20B8228B4374} = {6578ED94-63CC-4943-91C2-DF08EA846421}
 		{29DB9E76-DB07-43DD-8D99-FFDC9D507A91} = {6578ED94-63CC-4943-91C2-DF08EA846421}
 		{217DCC47-EFC9-4DD8-B147-7DE9DB9163FB} = {6578ED94-63CC-4943-91C2-DF08EA846421}
+		{E25D0A5B-8406-4141-BE45-5D85B4702958} = {0787DFC6-AB24-4D00-A8A4-FF203DC7D080}
+		{DCDEF962-55D3-469C-A296-F67C1C3859A8} = {672BFA2E-9F93-496F-B188-40579FB5D301}
+		{B8502CC4-0B11-4CDC-BC1B-8138DE93ED95} = {D3EA1078-BF3D-4709-871C-AAFF70B95045}
 	EndGlobalSection
 EndGlobal
