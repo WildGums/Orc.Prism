@@ -7,8 +7,8 @@
     <ProjectGuid>{3C1E9CEA-26E2-4F0E-A16F-23CF190DA646}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Orc.Prism5</RootNamespace>
-    <AssemblyName>Orc.Prism5</AssemblyName>
+    <RootNamespace>Orc.Prism</RootNamespace>
+    <AssemblyName>Orc.Prism</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -23,7 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>..\..\..\output\debug\NET45\Orc.Prism5\Orc.Prism5.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\output\debug\NET45\Orc.Prism5\Orc.Prism.xml</DocumentationFile>
     <NoWarn>1591;1998</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>..\..\..\output\release\NET45\Orc.Prism5\Orc.Prism5.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\output\release\NET45\Orc.Prism5\Orc.Prism.xml</DocumentationFile>
     <NoWarn>1591;1998</NoWarn>
   </PropertyGroup>
   <ItemGroup>

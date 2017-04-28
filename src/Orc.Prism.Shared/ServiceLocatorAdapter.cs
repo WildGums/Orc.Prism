@@ -13,7 +13,6 @@ namespace Orc.Prism
     using Catel.IoC;
 
     using Microsoft.Practices.ServiceLocation;
-
     using IServiceLocator = Catel.IoC.IServiceLocator;
 
     /// <summary>

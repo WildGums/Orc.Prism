@@ -26,7 +26,7 @@ namespace Orc.Prism.Modules
     /// <summary>
     /// The module info extensions.
     /// </summary>
-    internal static partial class ModuleInfoExtensions
+    public static partial class ModuleInfoExtensions
     {
         /// <summary>
         /// The type name pattern.

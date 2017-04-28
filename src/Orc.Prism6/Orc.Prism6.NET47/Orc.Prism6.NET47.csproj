@@ -7,8 +7,8 @@
     <ProjectGuid>{7949F31F-927E-4F72-8DDA-F59EC0BC6AFB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Orc.Prism6</RootNamespace>
-    <AssemblyName>Orc.Prism6</AssemblyName>
+    <RootNamespace>Orc.Prism</RootNamespace>
+    <AssemblyName>Orc.Prism</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -25,7 +25,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>1591;1998</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>..\..\..\output\debug\NET47\Orc.Prism6\Orc.Prism6.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\output\debug\NET47\Orc.Prism6\Orc.Prism.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>1591;1998</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>..\..\..\output\release\NET47\Orc.Prism6\Orc.Prism6.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\output\release\NET47\Orc.Prism6\Orc.Prism.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
