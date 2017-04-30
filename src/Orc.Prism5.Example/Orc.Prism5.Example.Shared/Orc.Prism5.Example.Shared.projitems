@@ -6,9 +6,10 @@
     <SharedGUID>65cc8ae2-8233-4b78-9c1a-9d144eef1777</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Orc.Prism5</Import_RootNamespace>
+    <Import_RootNamespace>Orc.Prism.Example</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ModuleInitializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
   </ItemGroup>
 </Project>

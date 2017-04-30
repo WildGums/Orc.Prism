@@ -7,7 +7,7 @@
     <ProjectGuid>{EB7BA13B-A81C-4ADA-B405-2DC3945C4A53}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Orc.Prism5.Example</RootNamespace>
+    <RootNamespace>Orc.Prism.Example</RootNamespace>
     <AssemblyName>Orc.Prism5.Example</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

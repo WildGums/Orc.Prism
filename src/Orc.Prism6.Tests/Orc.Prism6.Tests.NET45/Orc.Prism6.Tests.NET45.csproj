@@ -7,7 +7,7 @@
     <ProjectGuid>{A61BC07C-6F73-4D27-8C94-20B8228B4374}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Orc.Prism6.Tests</RootNamespace>
+    <RootNamespace>Orc.Prism.Tests</RootNamespace>
     <AssemblyName>Orc.Prism6.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

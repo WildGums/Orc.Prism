@@ -6,7 +6,7 @@
     <SharedGUID>7cb94b3d-ff22-4c7e-a66d-41cbc3dc76a5</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Orc.Prism6.Tests</Import_RootNamespace>
+    <Import_RootNamespace>Orc.Prism.Tests</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
