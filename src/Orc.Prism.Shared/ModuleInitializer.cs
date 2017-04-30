@@ -28,6 +28,6 @@ public static class ModuleInitializer
         serviceLocator.RegisterType<IUICompositionService, UICompositionService>();
 
         var languageService = serviceLocator.ResolveType<ILanguageService>();
-        languageService.RegisterLanguageSource(new LanguageResourceSource("Orc.Prism5", "Orc.Prism5.Properties", "Resources"));
+        languageService.RegisterLanguageSource(new LanguageResourceSource("Orc.Prism", "Orc.Prism.Properties", "Resources"));
     }
 }
