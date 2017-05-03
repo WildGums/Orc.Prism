@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Orc.Prism5.Views
+namespace Orc.Prism.Views
 {
     public partial class MainWindow 
     {

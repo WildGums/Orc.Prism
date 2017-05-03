@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Orc.Prism5.ViewModels
+namespace Orc.Prism.ViewModels
 {
     using System;
     using System.Threading.Tasks;
@@ -18,6 +18,7 @@ namespace Orc.Prism5.ViewModels
     {
         public MainViewModel()
         {
+            Title = "Orc.Prism example";
         }
 
         #region Properties

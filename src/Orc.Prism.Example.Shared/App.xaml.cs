@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Orc.Prism5.Example
+namespace Orc.Prism.Example
 {
     using System.Globalization;
     using System.Windows;
@@ -13,6 +13,7 @@ namespace Orc.Prism5.Example
     using Catel.Logging;
     using Catel.Services;
     using Catel.Windows;
+    using Orchestra;
 
     /// <summary>
     /// Interaction logic for App.xaml
@@ -38,7 +39,7 @@ namespace Orc.Prism5.Example
 
             base.OnStartup(e);
 
-            StyleHelper.CreateStyleForwardersForDefaultStyles();
+            this.ApplyTheme();
         }
     }
 }
