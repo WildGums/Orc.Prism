@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>b8502cc4-0b11-4cdc-bc1b-8138de93ed95</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Orc.Prism.Tests</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)..\SolutionAssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)..\GlobalSuppressions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BootstrapperBaseTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositeModuleCatalogFacts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogExtensionsTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModuleInitializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Modules\Extensions\ModuleInfoExtensions_Facts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Modules\NuGetBasedModuleCatalogParentChildBehavior_Facts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Modules\NuGetBasedModuleCatalog_Facts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ServiceLocatorAdapterTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UIVisualizerServiceExtensionsTests.cs" />
+  </ItemGroup>
+</Project>
