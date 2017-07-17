@@ -175,33 +175,6 @@ namespace Orc.Prism
         }
 
         /// <summary>
-        /// Runs the bootstrapper using the <see cref="ISplashScreenService" />.
-        /// </summary>
-        /// <typeparam name="TViewModel">The type of the view model.</typeparam>
-        /// <param name="runWithDefaultConfiguration">If set to <c>true</c>, the tasks should run with the default configuration.</param>
-        /// <exception cref="InvalidOperationException">
-        /// Thrown when the Logger is not successfully initialized.
-        /// -or-
-        /// The ModuleCatalog is not successfully initialized.
-        /// -or-
-        /// The ServiceLocator is not successfully initialized.
-        /// </exception>
-        public void RunWithSplashScreen<TViewModel>(bool runWithDefaultConfiguration = true)
-            where TViewModel : IProgressNotifyableViewModel
-        {
-            var tasks = CreateInitializationTasks(runWithDefaultConfiguration);
-
-            var splashScreenService = _serviceLocator.ResolveType<ISplashScreenService>();
-
-            foreach (var task in tasks)
-            {
-                splashScreenService.Enqueue(task);
-            }
-
-            splashScreenService.CommitAsync<TViewModel>();
-        }
-
-        /// <summary>
         /// Creates the initialization tasks.
         /// </summary>
         /// <param name="runWithDefaultConfiguration">If set to <c>true</c>, the tasks should run with the default configuration.</param>
