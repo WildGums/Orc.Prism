@@ -13,11 +13,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)..\GlobalSuppressions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BootstrapperBaseTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CompositeModuleCatalogFacts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalInitialization.approvaltests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogExtensionsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModuleInitializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Modules\Extensions\ModuleInfoExtensions_Facts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Modules\NuGetBasedModuleCatalogParentChildBehavior_Facts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Modules\NuGetBasedModuleCatalog_Facts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PublicApiFacts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ServiceLocatorAdapterTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UIVisualizerServiceExtensionsTests.cs" />
   </ItemGroup>
