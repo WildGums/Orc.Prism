@@ -19,9 +19,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRegionInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IViewInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModuleInitializer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)..\SolutionAssemblyInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)..\GlobalSuppressions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)..\MethodTimeLogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Modules\CompositeModuleCatalog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Modules\CompositeNuGetBasedModuleCatalog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Modules\EventArgs\ModuleEventArgs.cs" />

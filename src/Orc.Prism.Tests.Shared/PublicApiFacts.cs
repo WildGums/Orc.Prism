@@ -13,12 +13,24 @@ namespace Orc.Prism.Tests
     [TestFixture]
     public class PublicApiFacts
     {
+#if PRISM5
         [Test]
-        public void Orc_Prism_HasNoBreakingChanges()
+        public void Orc_Prism5_HasNoBreakingChanges()
         {
             var assembly = typeof(BootstrapperBase).Assembly;
 
             PublicApiApprover.ApprovePublicApi(assembly);
         }
+#endif
+
+#if PRISM6
+        [Test]
+        public void Orc_Prism6_HasNoBreakingChanges()
+        {
+            var assembly = typeof(BootstrapperBase).Assembly;
+
+            PublicApiApprover.ApprovePublicApi(assembly);
+        }
+#endif
     }
 }
