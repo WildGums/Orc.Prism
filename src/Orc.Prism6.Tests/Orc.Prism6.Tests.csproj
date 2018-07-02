@@ -9,6 +9,7 @@
     <Description></Description>
     <PackageTags></PackageTags>
     <DefineConstants>$(DefineConstants);PRISM6</DefineConstants>
+    <SonarQubeExclude>true</SonarQubeExclude>
   </PropertyGroup>
 
   <ItemGroup>

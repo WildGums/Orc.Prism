@@ -11,6 +11,11 @@
     <DefineConstants>$(DefineConstants);PRISM6</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- SonarQube requires a project guid -->
+    <ProjectGuid>9C520A95-2ACF-43B6-8ACD-E91CE608A4EC</ProjectGuid>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="CommonServiceLocator" Version="1.3.0" />
     <PackageReference Include="MethodTimer.Fody" Version="2.1.0" PrivateAssets="all" />

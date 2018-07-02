@@ -5,6 +5,7 @@
     <RootNamespace>Orc.Prism.Example</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <DefineConstants>$(DefineConstants);PRISM6</DefineConstants>
+    <SonarQubeExclude>true</SonarQubeExclude>
   </PropertyGroup>
 
   <PropertyGroup>
