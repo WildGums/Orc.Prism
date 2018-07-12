@@ -16,7 +16,7 @@ namespace Orc.Prism.Tests
     using Catel.MVVM;
     using Catel.Services;
     using Catel.MVVM.Views;
-    using Catel.Test;
+    using Catel.Tests;
     using Catel.Windows.Controls;
 
     using Moq;

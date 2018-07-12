@@ -9,7 +9,7 @@ namespace Orc.Prism.Tests
     using System;
 
     using Catel.Logging;
-    using Catel.Test;
+    using Catel.Tests;
 
 #if PRISM6
     using global::Prism.Logging;

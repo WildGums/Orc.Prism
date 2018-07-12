@@ -7,7 +7,7 @@
 namespace Orc.Prism.Tests.Modules.Extensions
 {
     using System;
-    using Catel.Test;
+    using Catel.Tests;
     
     using Orc.Prism.Modules;
     using NUnit.Framework;
