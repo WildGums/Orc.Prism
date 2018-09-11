@@ -25,48 +25,11 @@ Parameters["CodeSignWildcard"] = "Orc.Prism";
 // DEFINE COMPONENTS TO BUILD / PACKAGE
 //=======================================================
 
-var ComponentsToBuild = new string[]
-{
-    "Orc.Prism5",
-    "Orc.Prism6"
-};
+Components.Add("Orc.Prism5");
+Components.Add("Orc.Prism6");
 
-//=======================================================
-// DEFINE WEB APPS TO BUILD / PACKAGE
-//=======================================================
-
-var WebAppsToBuild = new string[]
-{
-
-};
-
-//=======================================================
-// DEFINE WPF APPS TO BUILD / PACKAGE
-//=======================================================
-
-var WpfAppsToBuild = new string[]
-{
-
-};
-
-//=======================================================
-// DEFINE UWP APPS TO BUILD / PACKAGE
-//=======================================================
-
-var UwpAppsToBuild = new string[]
-{
-
-};
-
-//=======================================================
-// DEFINE TEST PROJECTS TO BUILD
-//=======================================================
-
-var TestProjectsToBuild = new string[]
-{
-    "Orc.Prism5.Tests",
-    "Orc.Prism6.Tests"
-};
+TestProjects.Add("Orc.Prism5.Tests");
+TestProjects.Add("Orc.Prism6.Tests");
 
 //=======================================================
 // REQUIRED INITIALIZATION, DO NOT CHANGE
