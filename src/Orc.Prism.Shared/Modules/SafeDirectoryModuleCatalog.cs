@@ -101,9 +101,12 @@ namespace Orc.Prism.Modules
         {
             Argument.IsNotNull(() => parentDomain);
 
-            var evidence = new Evidence(parentDomain.Evidence);
-            var setup = parentDomain.SetupInformation;
-            return AppDomain.CreateDomain("DiscoveryRegion", evidence, setup);
+            return AppDomain.CreateDomain("DiscoveryRegion");
+
+            // Note: not supported in .NET Core 3.0
+            //var evidence = new Evidence(parentDomain.Evidence);
+            //var setup = parentDomain.SetupInformation;
+            //return AppDomain.CreateDomain("DiscoveryRegion", evidence, setup);
         }
 
         private class InnerModuleInfoLoader : MarshalByRefObject
