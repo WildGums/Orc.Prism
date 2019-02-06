@@ -124,7 +124,7 @@ namespace Orc.Prism.Modules
         /// <param name="e">The event argument.</param>
         private void OnLoadModuleCompleted(LoadModuleCompletedEventArgs e)
         {
-            LoadModuleCompleted.SafeInvoke(this, e);
+            LoadModuleCompleted?.Invoke(this, e);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Orc.Prism.Modules
         /// <remarks>The current implementation doesn't support</remarks>
         private void OnModuleDownloadProgressChanged(ModuleDownloadProgressChangedEventArgs e)
         {
-            ModuleDownloadProgressChanged.SafeInvoke(this, e);
+            ModuleDownloadProgressChanged?.Invoke(this, e);
         }
         #endregion
 
