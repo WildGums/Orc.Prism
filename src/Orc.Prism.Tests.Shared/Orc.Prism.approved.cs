@@ -91,6 +91,22 @@ namespace Orc.Prism
         public static void RegisterViewWithRegion<TView>(this Prism.Regions.IRegionManager regionManager, string regionName)
             where TView : System.Windows.Controls.UserControl { }
     }
+    public interface IUICompositionService
+    {
+        void Activate(Catel.MVVM.IViewModel viewModel, Catel.MVVM.IViewModel parentViewModel, string regionName);
+        void Activate(Catel.MVVM.IViewModel viewModel, string regionName = null);
+        void Activate(System.Type viewModelType, string regionName);
+        void Deactivate(Catel.MVVM.IViewModel viewModel);
+    }
+    public class static IUICompositionServiceExtensions
+    {
+        public static void Activate<TViewModel>(this Orc.Prism.IUICompositionService uiCompositionService, string regionName)
+            where TViewModel : Catel.MVVM.IViewModel { }
+    }
+    public class static IUIVisualizerServiceExtensions
+    {
+        public static System.Threading.Tasks.Task<System.Nullable<bool>> ShowAsync(this Catel.Services.IUIVisualizerService @this, Catel.MVVM.IViewModel viewModel, System.Action openedProc = null, System.EventHandler<Catel.Services.UICompletedEventArgs> completedProc = null, uint timeOutInMilliseconds = 10000) { }
+    }
     public interface IViewInfo
     {
         Prism.Regions.IRegion Region { get; }
@@ -113,6 +129,14 @@ namespace Orc.Prism
     {
         public StandaloneBootstrapper() { }
         protected override System.Windows.DependencyObject CreateShell() { }
+    }
+    public sealed class UICompositionService : Catel.Services.ViewModelServiceBase, Orc.Prism.IUICompositionService
+    {
+        public UICompositionService(Prism.Regions.IRegionManager regionManager, Catel.MVVM.Views.IViewManager viewManager, Catel.MVVM.IViewLocator viewLocator, Catel.Services.IDispatcherService dispatcherService, Catel.MVVM.IViewModelManager viewModelManager, Catel.MVVM.IViewModelFactory viewModelFactory) { }
+        public void Activate(Catel.MVVM.IViewModel viewModel, Catel.MVVM.IViewModel parentViewModel, string regionName) { }
+        public void Activate(Catel.MVVM.IViewModel viewModel, string regionName = null) { }
+        public void Activate(System.Type viewModelType, string regionName) { }
+        public void Deactivate(Catel.MVVM.IViewModel viewModel) { }
     }
 }
 namespace Orc.Prism.Modules
@@ -297,33 +321,6 @@ namespace Orc.Prism.Modules
         public string ModulePath { get; set; }
         protected virtual System.AppDomain BuildChildDomain(System.AppDomain parentDomain) { }
         protected override void InnerLoad() { }
-    }
-}
-namespace Orc.Prism.Services
-{
-    public interface IUICompositionService
-    {
-        void Activate(Catel.MVVM.IViewModel viewModel, Catel.MVVM.IViewModel parentViewModel, string regionName);
-        void Activate(Catel.MVVM.IViewModel viewModel, string regionName = null);
-        void Activate(System.Type viewModelType, string regionName);
-        void Deactivate(Catel.MVVM.IViewModel viewModel);
-    }
-    public class static IUICompositionServiceExtensions
-    {
-        public static void Activate<TViewModel>(this Orc.Prism.Services.IUICompositionService uiCompositionService, string regionName)
-            where TViewModel : Catel.MVVM.IViewModel { }
-    }
-    public class static IUIVisualizerServiceExtensions
-    {
-        public static System.Threading.Tasks.Task<System.Nullable<bool>> ShowAsync(this Catel.Services.IUIVisualizerService @this, Catel.MVVM.IViewModel viewModel, System.Action openedProc = null, System.EventHandler<Catel.Services.UICompletedEventArgs> completedProc = null, uint timeOutInMilliseconds = 10000) { }
-    }
-    public sealed class UICompositionService : Catel.Services.ViewModelServiceBase, Orc.Prism.Services.IUICompositionService
-    {
-        public UICompositionService(Prism.Regions.IRegionManager regionManager, Catel.MVVM.Views.IViewManager viewManager, Catel.MVVM.IViewLocator viewLocator, Catel.Services.IDispatcherService dispatcherService, Catel.MVVM.IViewModelManager viewModelManager, Catel.MVVM.IViewModelFactory viewModelFactory) { }
-        public void Activate(Catel.MVVM.IViewModel viewModel, Catel.MVVM.IViewModel parentViewModel, string regionName) { }
-        public void Activate(Catel.MVVM.IViewModel viewModel, string regionName = null) { }
-        public void Activate(System.Type viewModelType, string regionName) { }
-        public void Deactivate(Catel.MVVM.IViewModel viewModel) { }
     }
 }
 namespace Orc.Prism.Tasks

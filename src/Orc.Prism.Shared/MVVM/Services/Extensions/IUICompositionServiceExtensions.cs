@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Orc.Prism.Services
+namespace Orc.Prism
 {
     using System;
     using System.Linq;

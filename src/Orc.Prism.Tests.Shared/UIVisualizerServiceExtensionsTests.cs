@@ -21,7 +21,6 @@ namespace Orc.Prism.Tests
 
     using Moq;
     using NUnit.Framework;
-    using Services;
 
 #if PRISM6
     using global::Prism.Regions;

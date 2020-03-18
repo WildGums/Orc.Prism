@@ -1,6 +1,6 @@
-using Catel.IoC;
+﻿using Catel.IoC;
 using Catel.Services;
-using Orc.Prism.Services;
+using Orc.Prism;
 using Orc.Prism.Tasks;
 
 #if PRISM6
