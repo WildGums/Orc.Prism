@@ -30,7 +30,7 @@
     <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all" />
     <PackageReference Include="Prism" Version="5.0.0" />
     <PackageReference Include="Prism.Mvvm" Version="1.1.1" />
-    <PackageReference Include="WpfAnalyzers" Version="2.2.0.2" PrivateAssets="all" />
+    <PackageReference Include="WpfAnalyzers" Version="2.4.5" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
