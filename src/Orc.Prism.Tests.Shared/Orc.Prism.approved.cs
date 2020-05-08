@@ -1,6 +1,6 @@
-﻿[assembly: System.Resources.NeutralResourcesLanguageAttribute("en-US")]
-[assembly: System.Runtime.Versioning.TargetFrameworkAttribute(".NETFramework,Version=v4.6", FrameworkDisplayName=".NET Framework 4.6")]
-public class static ModuleInitializer
+﻿[assembly: System.Resources.NeutralResourcesLanguage("en-US")]
+[assembly: System.Runtime.Versioning.TargetFramework(".NETCoreApp,Version=v3.1", FrameworkDisplayName="")]
+public static class ModuleInitializer
 {
     public static void Initialize() { }
 }
@@ -24,15 +24,15 @@ namespace Orc.Prism
         public event System.EventHandler<System.EventArgs> InitializedShell;
         public event System.EventHandler<System.EventArgs> RegisteredFrameworkExceptionTypes;
         protected virtual void ConfigureContainer() { }
-        protected virtual void ConfigureServiceLocator() { }
+        protected override sealed void ConfigureServiceLocator() { }
         protected virtual Catel.MVVM.Tasks.ITask[] CreateInitializationTasks(bool runWithDefaultConfiguration) { }
-        protected virtual Prism.Logging.ILoggerFacade CreateLogger() { }
+        protected override sealed Prism.Logging.ILoggerFacade CreateLogger() { }
         protected virtual void InitializeBootTasks(System.Collections.Generic.IList<Catel.MVVM.Tasks.ITask> bootTasks) { }
         protected override void InitializeModules() { }
         public override void Run(bool runWithDefaultConfiguration) { }
         public class LoggerFacadeAdapter : Catel.Logging.LogListenerBase, Prism.Logging.ILoggerFacade
         {
-            public LoggerFacadeAdapter(Catel.Logging.ILog log, bool relayCatelMessageToLoggerFacade = False) { }
+            public LoggerFacadeAdapter(Catel.Logging.ILog log, bool relayCatelMessageToLoggerFacade = false) { }
             protected override void Debug(Catel.Logging.ILog log, string message, object extraData, Catel.Logging.LogData logData, System.DateTime time) { }
             protected override void Error(Catel.Logging.ILog log, string message, object extraData, Catel.Logging.LogData logData, System.DateTime time) { }
             protected override void Info(Catel.Logging.ILog log, string message, object extraData, Catel.Logging.LogData logData, System.DateTime time) { }
@@ -53,9 +53,9 @@ namespace Orc.Prism
     {
         protected BootstrapperBase(Catel.IoC.IServiceLocator serviceLocator = null) { }
         protected TModuleCatalog ModuleCatalog { get; }
-        protected virtual Prism.Modularity.IModuleCatalog CreateModuleCatalog() { }
+        protected override sealed Prism.Modularity.IModuleCatalog CreateModuleCatalog() { }
     }
-    public class static DependencyObjectExtensions
+    public static class DependencyObjectExtensions
     {
         public static Prism.Regions.IRegionManager FindFirstParentRegionManager(this System.Windows.DependencyObject @this) { }
         public static Orc.Prism.IRegionInfo GetRegionInfo(this System.Windows.DependencyObject @this, string regionName, Catel.IoC.IServiceLocator serviceLocator = null, Prism.Regions.IRegionManager defaultRegionManager = null) { }
@@ -63,7 +63,7 @@ namespace Orc.Prism
         public static string GetRegionName(this System.Windows.DependencyObject @this) { }
         public static void SetRegionManager(this System.Windows.DependencyObject @this, Prism.Regions.IRegionManager regionManager) { }
     }
-    public class static ILogExtensions
+    public static class ILogExtensions
     {
         public static void Debug(this Catel.Logging.ILog @this, Prism.Logging.Priority priority, string messageFormat, params object[] args) { }
         public static void Debug(this Catel.Logging.ILog @this, System.Exception exception, Prism.Logging.Priority priority = 0, string messageFormat = "", params object[] args) { }
@@ -86,33 +86,33 @@ namespace Orc.Prism
         Prism.Regions.IRegionManager RegionManager { get; }
         string RegionName { get; }
     }
-    public class static IRegionManagerExtensions
+    public static class IRegionManagerExtensions
     {
         public static void RegisterViewWithRegion<TView>(this Prism.Regions.IRegionManager regionManager, string regionName)
             where TView : System.Windows.Controls.UserControl { }
     }
     public interface IUICompositionService
     {
-        void Activate(Catel.MVVM.IViewModel viewModel, Catel.MVVM.IViewModel parentViewModel, string regionName);
         void Activate(Catel.MVVM.IViewModel viewModel, string regionName = null);
         void Activate(System.Type viewModelType, string regionName);
+        void Activate(Catel.MVVM.IViewModel viewModel, Catel.MVVM.IViewModel parentViewModel, string regionName);
         void Deactivate(Catel.MVVM.IViewModel viewModel);
     }
-    public class static IUICompositionServiceExtensions
+    public static class IUICompositionServiceExtensions
     {
         public static void Activate<TViewModel>(this Orc.Prism.IUICompositionService uiCompositionService, string regionName)
             where TViewModel : Catel.MVVM.IViewModel { }
     }
-    public class static IUIVisualizerServiceExtensions
+    public static class IUIVisualizerServiceExtensions
     {
-        public static System.Threading.Tasks.Task<System.Nullable<bool>> ShowAsync(this Catel.Services.IUIVisualizerService @this, Catel.MVVM.IViewModel viewModel, System.Action openedProc = null, System.EventHandler<Catel.Services.UICompletedEventArgs> completedProc = null, uint timeOutInMilliseconds = 10000) { }
+        public static System.Threading.Tasks.Task<bool?> ShowAsync(this Catel.Services.IUIVisualizerService @this, Catel.MVVM.IViewModel viewModel, System.Action openedProc = null, System.EventHandler<Catel.Services.UICompletedEventArgs> completedProc = null, uint timeOutInMilliseconds = 10000) { }
     }
     public interface IViewInfo
     {
         Prism.Regions.IRegion Region { get; }
         System.Windows.FrameworkElement View { get; }
     }
-    public class static PrismHelper
+    public static class PrismHelper
     {
         public static void InitializeMainWindow() { }
         public static void PrepareWithoutBootstrapper() { }
@@ -133,9 +133,9 @@ namespace Orc.Prism
     public sealed class UICompositionService : Catel.Services.ViewModelServiceBase, Orc.Prism.IUICompositionService
     {
         public UICompositionService(Prism.Regions.IRegionManager regionManager, Catel.MVVM.Views.IViewManager viewManager, Catel.MVVM.IViewLocator viewLocator, Catel.Services.IDispatcherService dispatcherService, Catel.MVVM.IViewModelManager viewModelManager, Catel.MVVM.IViewModelFactory viewModelFactory) { }
-        public void Activate(Catel.MVVM.IViewModel viewModel, Catel.MVVM.IViewModel parentViewModel, string regionName) { }
         public void Activate(Catel.MVVM.IViewModel viewModel, string regionName = null) { }
         public void Activate(System.Type viewModelType, string regionName) { }
+        public void Activate(Catel.MVVM.IViewModel viewModel, Catel.MVVM.IViewModel parentViewModel, string regionName) { }
         public void Deactivate(Catel.MVVM.IViewModel viewModel) { }
     }
 }
@@ -170,15 +170,9 @@ namespace Orc.Prism.Modules
     }
     public interface IDownloadingModuleCatalog : Prism.Modularity.IModuleCatalog
     {
-        public event System.EventHandler<Orc.Prism.Modules.ModuleEventArgs> ModuleDownloaded;
-        public event System.EventHandler<Orc.Prism.Modules.ModuleEventArgs> ModuleDownloading;
+        event System.EventHandler<Orc.Prism.Modules.ModuleEventArgs> ModuleDownloaded;
+        event System.EventHandler<Orc.Prism.Modules.ModuleEventArgs> ModuleDownloading;
         void LoadModule(string moduleName, System.Action completedCallback);
-    }
-    public class InstallPackageRequest
-    {
-        public InstallPackageRequest(Orc.Prism.Modules.ModuleAssemblyRef moduleAssemblyRef) { }
-        public Orc.Prism.Modules.ModuleAssemblyRef ModuleAssemblyRef { get; }
-        public virtual void Execute() { }
     }
     public interface INuGetBasedModuleCatalog : Prism.Modularity.IModuleCatalog
     {
@@ -191,9 +185,15 @@ namespace Orc.Prism.Modules
         System.Collections.Generic.IEnumerable<NuGet.IPackageRepository> GetPackageRepositories();
         bool TryCreateInstallPackageRequest(Prism.Modularity.ModuleInfo moduleInfo, out Orc.Prism.Modules.InstallPackageRequest installPackageRequest);
     }
-    public class static INuGetBasedModuleCatalogExtensions
+    public static class INuGetBasedModuleCatalogExtensions
     {
         public static System.Collections.Generic.IEnumerable<NuGet.IPackageRepository> GetAllPackageRepositories(this Orc.Prism.Modules.INuGetBasedModuleCatalog moduleCatalog, bool allowParentPackageSources) { }
+    }
+    public class InstallPackageRequest
+    {
+        public InstallPackageRequest(Orc.Prism.Modules.ModuleAssemblyRef moduleAssemblyRef) { }
+        public Orc.Prism.Modules.ModuleAssemblyRef ModuleAssemblyRef { get; }
+        public virtual void Execute() { }
     }
     public class ModuleAssemblyRef
     {
@@ -206,7 +206,7 @@ namespace Orc.Prism.Modules
         protected ModuleBase(string moduleName, Orc.Prism.IModuleTracker moduleTracker = null, Catel.IoC.IServiceLocator container = null) { }
         protected override T GetService<T>() { }
     }
-    [Prism.Modularity.ModuleAttribute()]
+    [Prism.Modularity.Module]
     public abstract class ModuleBase<TContainer> : Prism.Modularity.IModule
         where TContainer :  class
     {
@@ -221,7 +221,7 @@ namespace Orc.Prism.Modules
         protected virtual void OnInitializing() { }
         protected virtual void OnRegisterViewsAndTypes() { }
     }
-    [System.Windows.Markup.ContentPropertyAttribute("Items")]
+    [System.Windows.Markup.ContentProperty("Items")]
     public class ModuleCatalog : Prism.Modularity.IModuleCatalog
     {
         protected readonly Catel.Threading.SynchronizationContext _synchronizationContext;
@@ -236,13 +236,11 @@ namespace Orc.Prism.Modules
         public virtual Orc.Prism.Modules.ModuleCatalog AddGroup(Prism.Modularity.InitializationMode initializationMode, string refValue, params Prism.Modularity.ModuleInfo[] moduleInfos) { }
         public virtual void AddModule(Prism.Modularity.ModuleInfo moduleInfo) { }
         public Orc.Prism.Modules.ModuleCatalog AddModule(System.Type moduleType, params string[] dependsOn) { }
-        public Orc.Prism.Modules.ModuleCatalog AddModule(System.Type moduleType, Prism.Modularity.InitializationMode initializationMode, params string[] dependsOn) { }
         public Orc.Prism.Modules.ModuleCatalog AddModule(string moduleName, string moduleType, params string[] dependsOn) { }
+        public Orc.Prism.Modules.ModuleCatalog AddModule(System.Type moduleType, Prism.Modularity.InitializationMode initializationMode, params string[] dependsOn) { }
         public Orc.Prism.Modules.ModuleCatalog AddModule(string moduleName, string moduleType, Prism.Modularity.InitializationMode initializationMode, params string[] dependsOn) { }
         public Orc.Prism.Modules.ModuleCatalog AddModule(string moduleName, string moduleType, string refValue, Prism.Modularity.InitializationMode initializationMode, params string[] dependsOn) { }
         public virtual System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> CompleteListWithDependencies(System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> modules) { }
-        public static Orc.Prism.Modules.ModuleCatalog CreateFromXaml(System.IO.Stream xamlStream) { }
-        public static Orc.Prism.Modules.ModuleCatalog CreateFromXaml(System.Uri builderResourceUri) { }
         protected virtual void EnsureCatalogValidated() { }
         public virtual System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> GetDependentModules(Prism.Modularity.ModuleInfo moduleInfo) { }
         protected virtual System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> GetDependentModulesInner(Prism.Modularity.ModuleInfo moduleInfo) { }
@@ -250,26 +248,28 @@ namespace Orc.Prism.Modules
         public virtual void Initialize() { }
         protected virtual void InnerLoad() { }
         public void Load() { }
-        protected static string[] SolveDependencies(System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> modules) { }
         protected virtual System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> Sort(System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> modules) { }
         public virtual void Validate() { }
         protected virtual void ValidateCrossGroupDependencies() { }
-        protected static void ValidateDependencies(System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> modules) { }
         protected virtual void ValidateDependenciesInitializationMode() { }
         protected virtual void ValidateDependencyGraph() { }
         protected virtual void ValidateUniqueModules() { }
+        public static Orc.Prism.Modules.ModuleCatalog CreateFromXaml(System.IO.Stream xamlStream) { }
+        public static Orc.Prism.Modules.ModuleCatalog CreateFromXaml(System.Uri builderResourceUri) { }
+        protected static string[] SolveDependencies(System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> modules) { }
+        protected static void ValidateDependencies(System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> modules) { }
     }
-    public class static ModuleCatalogExtensions
+    public static class ModuleCatalogExtensions
     {
-        public static bool IsCatalogType<T>(this Prism.Modularity.IModuleCatalog moduleCatalog) { }
         public static bool IsCatalogType(this Prism.Modularity.IModuleCatalog moduleCatalog, System.Type typeToCheck) { }
+        public static bool IsCatalogType<T>(this Prism.Modularity.IModuleCatalog moduleCatalog) { }
     }
     public class ModuleEventArgs : System.EventArgs
     {
         public ModuleEventArgs(Prism.Modularity.ModuleInfo moduleInfo) { }
         public string ModuleName { get; }
     }
-    public class static ModuleInfoExtensions
+    public static class ModuleInfoExtensions
     {
         public static string GetAssemblyName(this Prism.Modularity.ModuleInfo moduleInfo) { }
         public static Orc.Prism.Modules.ModuleAssemblyRef GetModuleAssemblyRef(this Prism.Modularity.ModuleInfo moduleInfo, string outputDirectoryAbsoluteUri) { }
@@ -284,8 +284,8 @@ namespace Orc.Prism.Modules
         public override System.Collections.Generic.IEnumerable<Prism.Modularity.ModuleInfo> Modules { get; }
         public string OutputDirectory { get; set; }
         public string OutputDirectoryFullPath { get; }
-        public string PackagedModuleIdFilterExpression { get; set; }
         public string PackageSource { get; set; }
+        public string PackagedModuleIdFilterExpression { get; set; }
         public Orc.Prism.Modules.INuGetBasedModuleCatalog Parent { get; set; }
         protected virtual Prism.Modularity.ModuleInfo CreatePackageModule(NuGet.IPackage package) { }
         protected virtual System.Collections.Generic.IEnumerable<NuGet.IPackage> GetFilteredPackagedModules(System.Linq.IQueryable<NuGet.IPackage> queryablePackages) { }
@@ -328,44 +328,44 @@ namespace Orc.Prism.Tasks
     public class BootstrapperTaskFactory : Orc.Prism.Tasks.IBootstrapperTaskFactory
     {
         public BootstrapperTaskFactory() { }
-        public virtual Catel.MVVM.Tasks.ITask CreateConfigureDefaultRegionBehaviorsTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateConfigureDefaultRegionBehaviorsTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateConfigureDefaultRegionBehaviorsTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateConfigureModuleCatalogTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateConfigureModuleCatalogTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateConfigureModuleCatalogTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateConfigureRegionAdaptersTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateConfigureRegionAdaptersTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateConfigureRegionAdaptersTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorContainerTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorContainerTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorContainerTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateCreateLoggerTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateCreateLoggerTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateCreateLoggerTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateCreateModuleCatalogTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateCreateModuleCatalogTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateCreateModuleCatalogTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateCreateServiceLocatorContainerTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateCreateServiceLocatorContainerTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateCreateServiceLocatorContainerTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateCreateShellTask(System.Action action, bool dispatch = True) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateCreateShellTask(System.Action action, bool dispatch = true) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateCreateShellTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateInitializeModulesTask(System.Action action, bool dispatch = True) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateInitializeModulesTask(System.Action action, bool dispatch = true) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateInitializeModulesTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateInitializingShellTask(System.Action action, bool dispatch = True) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateInitializingShellTask(System.Action action, bool dispatch = true) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateInitializingShellTask(System.Action action, string description, bool dispatch) { }
-        public virtual Catel.MVVM.Tasks.ITask CreateRegisterFrameworkExceptionTypesTask(System.Action action, bool dispatch = False) { }
+        public virtual Catel.MVVM.Tasks.ITask CreateRegisterFrameworkExceptionTypesTask(System.Action action, bool dispatch = false) { }
         protected virtual Catel.MVVM.Tasks.ITask CreateRegisterFrameworkExceptionTypesTask(System.Action action, string description, bool dispatch) { }
     }
     public interface IBootstrapperTaskFactory
     {
-        Catel.MVVM.Tasks.ITask CreateConfigureDefaultRegionBehaviorsTask(System.Action action, bool dispatch = False);
-        Catel.MVVM.Tasks.ITask CreateConfigureModuleCatalogTask(System.Action action, bool dispatch = False);
-        Catel.MVVM.Tasks.ITask CreateConfigureRegionAdaptersTask(System.Action action, bool dispatch = False);
-        Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorContainerTask(System.Action action, bool dispatch = False);
-        Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorTask(System.Action action, bool dispatch = False);
-        Catel.MVVM.Tasks.ITask CreateCreateLoggerTask(System.Action action, bool dispatch = False);
-        Catel.MVVM.Tasks.ITask CreateCreateModuleCatalogTask(System.Action action, bool dispatch = False);
-        Catel.MVVM.Tasks.ITask CreateCreateServiceLocatorContainerTask(System.Action action, bool dispatch = False);
-        Catel.MVVM.Tasks.ITask CreateCreateShellTask(System.Action action, bool dispatch = True);
-        Catel.MVVM.Tasks.ITask CreateInitializeModulesTask(System.Action action, bool dispatch = True);
-        Catel.MVVM.Tasks.ITask CreateInitializingShellTask(System.Action action, bool dispatch = True);
-        Catel.MVVM.Tasks.ITask CreateRegisterFrameworkExceptionTypesTask(System.Action action, bool dispatch = False);
+        Catel.MVVM.Tasks.ITask CreateConfigureDefaultRegionBehaviorsTask(System.Action action, bool dispatch = false);
+        Catel.MVVM.Tasks.ITask CreateConfigureModuleCatalogTask(System.Action action, bool dispatch = false);
+        Catel.MVVM.Tasks.ITask CreateConfigureRegionAdaptersTask(System.Action action, bool dispatch = false);
+        Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorContainerTask(System.Action action, bool dispatch = false);
+        Catel.MVVM.Tasks.ITask CreateConfigureServiceLocatorTask(System.Action action, bool dispatch = false);
+        Catel.MVVM.Tasks.ITask CreateCreateLoggerTask(System.Action action, bool dispatch = false);
+        Catel.MVVM.Tasks.ITask CreateCreateModuleCatalogTask(System.Action action, bool dispatch = false);
+        Catel.MVVM.Tasks.ITask CreateCreateServiceLocatorContainerTask(System.Action action, bool dispatch = false);
+        Catel.MVVM.Tasks.ITask CreateCreateShellTask(System.Action action, bool dispatch = true);
+        Catel.MVVM.Tasks.ITask CreateInitializeModulesTask(System.Action action, bool dispatch = true);
+        Catel.MVVM.Tasks.ITask CreateInitializingShellTask(System.Action action, bool dispatch = true);
+        Catel.MVVM.Tasks.ITask CreateRegisterFrameworkExceptionTypesTask(System.Action action, bool dispatch = false);
     }
 }
