@@ -205,7 +205,7 @@ namespace Orc.Prism
                 }
                 */
 
-                CreatedLogger.SafeInvoke(this);
+                CreatedLogger?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Created logger", Category.Debug, Priority.Low);
             }));
@@ -220,7 +220,7 @@ namespace Orc.Prism
                     throw new InvalidOperationException("The IModuleCatalog is required and cannot be null in order to initialize the modules");
                 }
 
-                CreatedModuleCatalog.SafeInvoke(this);
+                CreatedModuleCatalog?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Created module catalog", Category.Debug, Priority.Low);
             }));
@@ -231,7 +231,7 @@ namespace Orc.Prism
 
                 ConfigureModuleCatalog();
 
-                ConfiguredModuleCatalog.SafeInvoke(this);
+                ConfiguredModuleCatalog?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Configured module catalog", Category.Debug, Priority.Low);
             }));
@@ -242,7 +242,7 @@ namespace Orc.Prism
 
                 Container = CreateContainer();
 
-                CreatedServiceLocatorContainer.SafeInvoke(this);
+                CreatedServiceLocatorContainer?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Created service locator container", Category.Debug, Priority.Low);
             }));
@@ -253,7 +253,7 @@ namespace Orc.Prism
 
                 ConfigureContainer();
 
-                ConfiguredServiceLocatorContainer.SafeInvoke(this);
+                ConfiguredServiceLocatorContainer?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Configured the container", Category.Debug, Priority.Low);
             }));
@@ -264,7 +264,7 @@ namespace Orc.Prism
 
                 ConfigureServiceLocator();
 
-                ConfiguredServiceLocator.SafeInvoke(this);
+                ConfiguredServiceLocator?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Configured service locator", Category.Debug, Priority.Low);
             }));
@@ -275,7 +275,7 @@ namespace Orc.Prism
 
                 ConfigureRegionAdapterMappings();
 
-                ConfiguredRegionAdapters.SafeInvoke(this);
+                ConfiguredRegionAdapters?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Configured region adapters", Category.Debug, Priority.Low);
             }));
@@ -286,7 +286,7 @@ namespace Orc.Prism
 
                 ConfigureDefaultRegionBehaviors();
 
-                ConfiguredDefaultRegionBehaviors.SafeInvoke(this);
+                ConfiguredDefaultRegionBehaviors?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Configured default region behaviors", Category.Debug, Priority.Low);
             }));
@@ -297,7 +297,7 @@ namespace Orc.Prism
 
                 RegisterFrameworkExceptionTypes();
 
-                RegisteredFrameworkExceptionTypes.SafeInvoke(this);
+                RegisteredFrameworkExceptionTypes?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Registered Framework Exception Types", Category.Debug, Priority.Low);
             }));
@@ -317,7 +317,7 @@ namespace Orc.Prism
                     Logger.Log("Updating Regions", Category.Debug, Priority.Low);
                     dispatcherService.Invoke(RegionManager.UpdateRegions, true);
 
-                    CreatedShell.SafeInvoke(this);
+                    CreatedShell?.Invoke(this, EventArgs.Empty);
                 }
 
                 Logger.Log("Created the shell", Category.Debug, Priority.Low);
@@ -331,7 +331,7 @@ namespace Orc.Prism
 
                     InitializeModules();
 
-                    InitializedModules.SafeInvoke(this);
+                    InitializedModules?.Invoke(this, EventArgs.Empty);
 
                     Logger.Log("Initialized modules", Category.Debug, Priority.Low);
                 }
@@ -350,10 +350,10 @@ namespace Orc.Prism
                     var dispatcherService = Container.ResolveType<IDispatcherService>();
                     dispatcherService.Invoke(InitializeShell, true);
 
-                    InitializedShell.SafeInvoke(this);
+                    InitializedShell?.Invoke(this, EventArgs.Empty);
                 }
 
-                BootstrapperCompleted.SafeInvoke(this);
+                BootstrapperCompleted?.Invoke(this, EventArgs.Empty);
 
                 Logger.Log("Bootstrapper sequence completed", Category.Debug, Priority.Low);
             }));

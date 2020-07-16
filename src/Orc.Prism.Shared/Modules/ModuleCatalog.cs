@@ -1,4 +1,4 @@
-// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ModuleCatalog.cs" company="WildGums">
 //   Copyright (c) 2008 - 2017 WildGums. All rights reserved.
 // </copyright>
@@ -47,7 +47,7 @@ namespace Orc.Prism.Modules
     /// <remarks>
     /// This implementation is actually based on the original source of Prism. But is thread safe and actually allow inherits from it with correctness.
     /// </remarks>
-    [ContentProperty("Items")]
+    [ContentProperty(nameof(Items))]
     public class ModuleCatalog : IModuleCatalog
     {
         #region Constants
